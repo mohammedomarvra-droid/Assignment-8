@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="bg-light-subtle shadow pb-2">
+        <div class="container">
+            <div class="nav d-flex justify-content-between pt-3">
+                <div class="logo d-flex gap-2 justify-content-center align-items-center">
+                    <div class="icon rounded-3 shadow">
+                        <i class="fa-solid fa-circle-user "></i>
+                    </div>
+                    <div class="caption">
+                        <h5 class="m-0">Contact<span class="text-primary">Hub</span></h5>
+                        <p class="caption-pr m-0">Smart Contact Manager</p>
+                    </div>
+                </div>
+                <div class="Actions d-flex gap-2 align-items-center justify-content-center">
+
+                    <button class="btn btn-primary rounded-3" data-bs-toggle="modal" data-bs-target="#contactModal"
+                        onclick=" populateForm()">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Contact
+                    </button>
+
+                    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="contactModalLabel">Add New Contact</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="contactForm">
+                                        <div class="mb-3">
+                                            <label for="userName" class="form-label">Full Name</label>
+                                            <input oninput="validate(this)" type="text" class="form-control"
+                                                id="userName" placeholder="Enter Full name">
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="userNumber" class="form-label">number</label>
+                                            <input oninput="validate(this)" type="number" class="form-control"
+                                                id="userNumber" placeholder="e.g=>010123456789">
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="userEmail" class="form-label">Gmail / Email</label>
+                                            <input oninput="validate(this)" type="email" class="form-control"
+                                                id="userEmail" placeholder="name@gmail.com">
+
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="userPassword" class="form-label">Password</label>
+                                            <input oninput="validate(this)" type="password" class="form-control"
+                                                id="userPassword" placeholder="Enter password">
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="userAddress" class="form-label">Address</label>
+                                            <input oninput="validate(this)" type="text" class="form-control"
+                                                id="userAddress" placeholder="Enter Addres">
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="userselect" class="form-label">Group</label>
+                                            <select oninput="validate(this)" id="userSelect" class="form-select">
+                                                <option value="select a Group">select a Group</option>
+                                                <option value="Family">Family</option>
+                                                <option value="Frindes">Frindes</option>
+                                                <option value="Work">Work</option>
+                                            </select>
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="contactNotes" class="form-label">Notes / Description</label>
+                                            <textarea oninput="validate(this)" class="form-control" id="contactNotes"
+                                                rows="3" placeholder="Enter additional notes..."></textarea>
+                                        </div>
+                                        <div class="alert alert-danger d-none">
+                                            Name must start with a capital letter and be between 2 and 10 characters
+                                            long.
+                                        </div>
+
+                                        <div class="row mb-3">
+
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="favCheck">
+                                                    <label class="form-check-label" for="favCheck">
+                                                        <i class="fa-solid fa-star text-warning me-1"></i> Favorite
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="emergencyCheck">
+                                                    <label class="form-check-label" for="emergencyCheck">
+                                                        <i class="fa-solid fa-heart-pulse text-danger me-1"></i>
+                                                        Emergency
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary shadow" id="addButton"
+                                        onclick="addContact()" data-bs-dismiss="modal"> <i
+                                            class="fa-solid fa-check"></i> Save
+                                        Contact</button>
+
+                                    <button type="button" class="btn btn-info d-none text-light shadow" id="upDate"
+                                        onclick=" updeteFun()" data-bs-dismiss="modal"> <i
+                                            class="fa-solid fa-check"></i> Save
+                                        Contact</button>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-btn">
+                        <button type="button" class="btn btn-light"><i class="fa-solid fa-bell"></i>
+                        </button>
+                        <button type="button" class="btn btn-light"><i class="fa-solid fa-gear"></i>
+                        </button>
+                    </div>
+                    <div class="action-img"> <img src="./image/imgi_1_avatar-4.png" alt=""></div>
+
+                </div>
+            </div>
+    </header>
+    <section class="stats-cards pt-5">
+        <div class="container d-flex gap-3">
+            <div class="cards w-50 bg-light p-3 rounded-3 shadow">
+                <div class="card-item d-flex gap-3">
+                    <div class="card-icon bg-primary rounded-3">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="card-caption">
+                        <p class="m-0">Total</p>
+                        <p class="m-0 fw-bold fs-2">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cards w-50 bg-light p-3 rounded-3 shadow">
+                <div class="card-item d-flex gap-3">
+                    <div class="card-icon bg-warning rounded-3">
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+                    <div class="card-caption">
+                        <p class="m-0">Favorites</p>
+                        <p class="m-0 fw-bold fs-2">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cards w-50 bg-light p-3 rounded-3 shadow">
+                <div class="card-item d-flex gap-3">
+                    <div class="card-icon bg-danger rounded-3">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div class="card-caption">
+                        <p class="m-0">Emergency</p>
+                        <p class="m-0 fw-bold fs-2">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="m-0 fs-2 fw-bold pt-5">All Contacts</p>
+            <p class="m-0 fs-4">Manage and organize your 1 contacts</p>
+            <input oninput="searchFun()" id="searchInput" type="text" class="form-control my-3 w-50 mx-auto shadow"
+                placeholder="search by name">
+            <div class="row g-5 w-100" id="contactRow">
+
+            </div>
+    </section>
+    <section class="pt-5">
+        <div class="container">
+            <div class="fav w-100 d-flex justify-content-center gap-5 ">
+                <div class="Favorites rounded-4 shadow w-25 ">
+                    <div class="head-fav d-flex align-items-center gap-3 bg-warning-subtle w-100  p-2">
+                        <div class="star ">
+                            <i class="fa-solid fa-star text-light fs-4 fw-bold"></i>
+                        </div>
+                        <div class="capction-fav">
+                            <p class="m-0 fw-bold fs-4">Favorites</p>
+                            <span class="m-0">Quick access to starred contacts</span>
+                        </div>
+                    </div>
+                    <div class="add-fav d-flex align-items-center gap-3 bg-light w-100 justify-content-center p-5 ">
+                        <p>No favorites yet</p>
+                    </div>
+                </div>
+                <div class="Emergency rounded-4 shadow w-25  ">
+                    <div class="head-fav d-flex align-items-center gap-3 bg-danger-subtle w-100  p-2">
+                        <div class="star bg-danger">
+                            <i class="fa-solid fa-heart-crack text-light fs-4 fw-bold"></i>
+                        </div>
+                        <div class="capction-fav">
+                            <p class="m-0 fw-bold fs-4">Favorites</p>
+                            <span class="m-0">Quick access to starred contacts</span>
+                        </div>
+                    </div>
+                    <div class="add-fav d-flex align-items-center gap-3 bg-light w-100 justify-content-center p-5 ">
+                        <p>No emergency contacts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

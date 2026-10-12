@@ -1,0 +1,60 @@
+
+.icon i{
+    font-size: 30px;
+    color: #ffffff;
+}
+.icon{
+    padding: 8px;
+    background-color: mediumblue;
+    width: 55px;
+}
+.caption-pr{
+    font-size: 12px;
+    
+}
+.action-img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.card-icon{
+   
+    padding: 15px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-icon i{
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+}
+.userphone .phone{
+    background-color: rgba(0, 128, 0, 0.281);
+    border-radius: 12px;
+    padding: 2px;
+
+}
+.card-item-2{
+    border: 2px solid gray;
+    width: 400px;
+    padding: 10px;
+}
+.star{
+    width: 40px;
+    height: 40px;
+background-color: orange;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
